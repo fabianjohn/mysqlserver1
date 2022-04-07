@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div>
+<h1>SPRING BOOT CRUD SYSTEM-STUDENT REGISTRATION SYSTEM</h1>
+	<tr>
+	<div align="left">
+	<h2><a th:href="@{'/new'}">Add New Student</a></h2>
+	<h2><a href="details">Search</a></h2>
+	</div>
+</tr>
+<tr>
+<div class="col-sm-4" align="center">
+	<div class="panel-body" align="center">
+	
+	<table class="table">
+	<thead class="thead-dark">
+	<tr style=" background-color: rgb(23, 175, 36); font-size: 20">
+		<th>Student ID </th>
+		<th>Student Name</th>
+		<th>Course</th>
+	    <th>Fee</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+	
+	</thead>
+	<tbody>
+	
+	<tr th:each="liststudent: ${liststudent }" style=" background-color: rgb(143, 165, 53); font-size: 20;">
+		<th th:text="${liststudent.id}">Student Id</th>
+		<th th:text="${liststudent.studentname}">Student Name</th>
+		<th th:text="${liststudent.course}">Course</th>
+		<th th:text="${liststudent.fee}">Fee</th>
+		<th>
+		<a th:href="@{'/edit/' + ${liststudent.id}}">Edit</a>
+			
+		</th>
+		<th>
+		<a th:href="@{'/delete/' + ${liststudent.id}}">Delete</a>
+			
+		</th>
+	</tbody>
+	</table>
+	
+	</div>
+
+
+</div>
+
+</tr>
+</div>
+</body>
+</html>
